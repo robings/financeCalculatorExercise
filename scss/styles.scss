@@ -1,0 +1,191 @@
+$pageBgColour: #222222;
+$elementBgColour: #111111;
+$darkElementBgColour: #333333;
+$lightTxtColour: #FF69B4;
+$darkTxtColour: #000000;
+$errorColour: #EE0A0A;
+$lightTxtColour2nd: #F4F1D0;
+
+@font-face {
+  font-family: "IBMPlexMono";
+  src: url("../IBMPlexMono-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'IBMPlexSans';
+  src: url('../IBMPlexSans-Regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $pageBgColour;
+  font-family: 'IBMPlexMono', 'Helvetica Neue', 'sans-serif'
+}
+
+section {
+  width: 80%;
+  background-color: $elementBgColour;
+  color: $lightTxtColour;
+  margin: 20px auto;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+#calculate {
+  width: 120px;
+  border: 1px solid $pageBgColour;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+    background: $darkElementBgColour;
+    color: $lightTxtColour;
+  }
+}
+
+input {
+  background-color: $darkElementBgColour;
+  color: $lightTxtColour;
+  font-size: 1rem;
+  border: none;
+  padding: 5px;
+  height: 30px;
+}
+
+input[type='number'] {
+  width: 125px;
+  border-radius: 5px;
+  }
+
+#repayPercentDisplay {
+  width: 60px;
+}
+
+.underline {
+  width: 100%;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid $darkElementBgColour;
+  overflow: auto;
+}
+
+.underline div {
+    display: inline-block;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  background: $darkElementBgColour;
+  outline: none;
+  border-radius: 3px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 0;
+  background: url('../slider.svg');
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border: 0;
+  background: url('../slider.svg');
+  cursor: pointer;
+}
+
+.borrowSlider {
+  width: 80%;
+  padding: 5px 0;
+  input {
+    width: 80%;
+  }
+}
+
+#calcSection {
+  display: none;
+}
+
+#calcDisplay {
+  overflow: auto;
+}
+
+table {
+  border: 1px solid $darkElementBgColour;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0 20px 0 0;
+  float: left;
+}
+
+th, td {
+  border: 1px solid $darkElementBgColour;
+  padding: 3px;
+}
+
+th {
+  text-align: left;
+  font-family: 'IBMPlexSans', 'Helvetica Neue', 'sans-serif';
+}
+
+td {
+  text-align: right;
+}
+
+.focus {
+  color: $lightTxtColour2nd;
+}
+
+.errorMessage {
+  color: $errorColour;
+  display: none;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .borrowSlider {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .borrowSlider {
+    input {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body {
+   font-size: 12px;
+  }
+  section {
+    width: 99%;
+  }
+  input {
+    font-size: 0.75rem
+  }
+  input[type='number'] {
+    width: 100px;
+    height: 20px;
+  }
+  #repayPercentDisplay {
+    width: 45px;
+  }
+}
