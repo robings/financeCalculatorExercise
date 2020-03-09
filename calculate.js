@@ -26,21 +26,22 @@ function calculate () {
         gt90feeYes='N/A'
     }
 
-    totalBorrowed=parseFloat(totalBorrowed).toFixed(2)
+    totalBorrowed=parseFloat(totalBorrowed.toFixed(2))
 
-    let adminFee=parseFloat(totalBorrowed*0.05).toFixed(2)
+    let adminFee=parseFloat((totalBorrowed*0.05).toFixed(2)).toFixed(2)
 
-    let monthlyRepayment=parseFloat((expectedSalary/12)*(monthlyRepaymentPercentage/100)).toFixed(2)
+    let monthlyRepayment=parseFloat(((expectedSalary/12)*(monthlyRepaymentPercentage/100)).toFixed(2)).toFixed(2)
 
     if (monthlyRepayment > totalBorrowed) {
-        monthlyRepayment=totalBorrowed
+        monthlyRepayment=totalBorrowed.toFixed(2)
     }
 
     let monthsToRepay=Math.ceil((totalBorrowed)/monthlyRepayment)
 
     let finalMonthlyRepayment
     if (monthsToRepay!=1) {
-        finalMonthlyRepayment=parseFloat(totalBorrowed-(monthsToRepay-1)*monthlyRepayment).toFixed(2)
+        finalMonthlyRepayment=(totalBorrowed-(monthsToRepay-1)*monthlyRepayment)
+        finalMonthlyRepayment=parseFloat(finalMonthlyRepayment.toFixed(2)).toFixed(2)
     } else {
         finalMonthlyRepayment='N/A'
     }
